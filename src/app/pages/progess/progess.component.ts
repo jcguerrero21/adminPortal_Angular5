@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-progess',
-  templateUrl: './progess.component.html',
+  selector: "app-progess",
+  templateUrl: "./progess.component.html",
   styles: []
 })
 export class ProgessComponent implements OnInit {
+  porcentaje1: number = 20;
+  porcentaje2: number = 30;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  actualizarProgess(event: number){
+    console.log('Evento: ',event);
   }
-
 }

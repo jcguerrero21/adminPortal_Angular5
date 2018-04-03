@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 //Routing
 import { APP_ROUTING } from "./app.routing";
@@ -8,16 +9,11 @@ import { APP_ROUTING } from "./app.routing";
 import { PagesModule } from "./pages/pages.module";
 
 import { AppComponent } from "./app.component";
-import { LoginComponent } from "./login/login.component";
-import { RegisterComponent } from "./login/register.component";
+import { LoginModule } from "./login/login.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent
-  ],
-  imports: [BrowserModule, APP_ROUTING, PagesModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, APP_ROUTING, PagesModule, LoginModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
