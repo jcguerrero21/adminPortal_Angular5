@@ -16,6 +16,9 @@ import { GraficoDonaComponent } from "../components/grafico-dona/grafico-dona.co
 
 //rutas
 import { PAGES_ROUTING } from "./pages.routing";
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { PAGES_ROUTING } from "./pages.routing";
     ProgessComponent,
     Graficas1Component,
     IncrementadorComponent,
-    GraficoDonaComponent
+    GraficoDonaComponent,
+    AccountSettingsComponent,
+    PromesasComponent,
+    RxjsComponent
   ],
   exports: [
     DashboardComponent,

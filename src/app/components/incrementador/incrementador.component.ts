@@ -25,7 +25,6 @@ export class IncrementadorComponent implements OnInit {
   onChanges(newValue: number) {
 
     // let elemHTML: any = document.getElementsByName("porcentaje")[0];
-    
 
     if (newValue >= 100) {
       this.porcentaje = 100;
