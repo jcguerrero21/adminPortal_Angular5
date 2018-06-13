@@ -4,16 +4,17 @@ import { Graficas1Component } from "./graficas1/graficas1.component";
 import { ProgessComponent } from "./progess/progess.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { PagesComponent } from "./pages.component";
-import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { AccountSettingsComponent } from "./account-settings/account-settings.component";
 import { PromesasComponent } from "./promesas/promesas.component";
-import { RxjsComponent } from './rxjs/rxjs.component';
-import { LoginGuardGuard } from '../services/guards/login-guard.guard';
+import { RxjsComponent } from "./rxjs/rxjs.component";
+import { LoginGuardGuard } from "../services/guards/login-guard.guard";
+import { ProfileComponent } from './profile/profile.component';
 
 const PAGESROUTING: Routes = [
   {
     path: "",
     component: PagesComponent,
-    canActivate: [ LoginGuardGuard ],
+    canActivate: [LoginGuardGuard],
     children: [
       {
         path: "dashboard",
@@ -44,6 +45,11 @@ const PAGESROUTING: Routes = [
         path: "account-settings",
         component: AccountSettingsComponent,
         data: { titulo: "Temas" }
+      },
+      {
+        path: "perfil",
+        component: ProfileComponent,
+        data: { titulo: "Perfil de usuario" }
       },
       {
         path: "",
