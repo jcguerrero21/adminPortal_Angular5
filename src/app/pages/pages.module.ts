@@ -25,6 +25,8 @@ import { GraficoDonaComponent } from "../components/grafico-dona/grafico-dona.co
 //rutas
 import { PAGES_ROUTING } from "./pages.routing";
 import { CommonModule } from "@angular/common";
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { CommonModule } from "@angular/common";
     AccountSettingsComponent,
     PromesasComponent,
     RxjsComponent,
-    ProfileComponent
+    ProfileComponent,
+    UsuariosComponent,
+    ModalUploadComponent
   ],
   exports: [
     DashboardComponent,

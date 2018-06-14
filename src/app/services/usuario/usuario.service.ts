@@ -44,9 +44,14 @@ export class UsuarioService {
     url += "?token=" + this.token;
 
     return this.http.put(url, usuario).map((resp: any) => {
-      this.usuario = resp.usuario;
-      this.guardarStorage(resp.usuario._id, this.token, usuario);
+
+      if (usuario._id === this.usuario._id) {
+        this.usuario = resp.usuario;
+        this.guardarStorage(resp.usuario._id, this.token, usuario);
+      }
+
       swal("Usuario actualizado", usuario.nombre, "success");
+      
       return true;
     });
   }
@@ -104,5 +109,25 @@ export class UsuarioService {
     localStorage.removeItem("usuario");
 
     this.router.navigate(["/login"]);
+  }
+
+  cargarUsuarios(desde: number) {
+    let url = URL_SERVICIOS + '/usuario?desde=' + desde;
+    return this.http.get(url);
+  }
+
+  buscarUsuarios(termino: string ) {
+    let url = URL_SERVICIOS + '/busqueda/coleccion/usuarios/' + termino;
+    return this.http.get(url).map((resp: any) => resp.usuarios);
+  }
+
+  borrarUsuario(id: string ) {
+    let url = URL_SERVICIOS + '/usuario/' + id;
+    url += '?token=' + this.token;
+
+    return this.http.delete(url).map(resp => {
+      swal('Usuario borrado', 'El usuario ha sido eliminado correctamente', 'success');
+      return true;
+    });
   }
 }

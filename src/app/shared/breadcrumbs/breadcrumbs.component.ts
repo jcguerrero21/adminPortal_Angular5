@@ -18,7 +18,6 @@ export class BreadcrumbsComponent implements OnInit {
   ) {
 
     this.getDataRoute().subscribe(data => {
-      console.log(data.titulo);
 
       this.label = data.titulo;
       this.title.setTitle(this.label);
