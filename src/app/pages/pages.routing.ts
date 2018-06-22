@@ -2,7 +2,6 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { Graficas1Component } from "./graficas1/graficas1.component";
 import { ProgessComponent } from "./progess/progess.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
 import { PagesComponent } from "./pages.component";
 import { AccountSettingsComponent } from "./account-settings/account-settings.component";
 import { PromesasComponent } from "./promesas/promesas.component";
@@ -13,6 +12,9 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from "./medicos/medico.component";
+import { BusquedaComponent } from './busqueda/busqueda.component';
+import { AdminGuard } from '../services/guards/admin.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const PAGESROUTING: Routes = [
   {
@@ -55,10 +57,16 @@ const PAGESROUTING: Routes = [
         component: ProfileComponent,
         data: { titulo: "Perfil de usuario" }
       },
+      {
+        path: "busqueda/:termino",
+        component: BusquedaComponent,
+        data: { titulo: "Buscador" }
+      },
       //Mantenimiento
       {
         path: "usuarios",
         component: UsuariosComponent,
+        canActivate: [ AdminGuard ],
         data: { titulo: "Mantenimiento de usuarios" }
       },
       {
