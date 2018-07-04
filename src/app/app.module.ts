@@ -11,7 +11,6 @@ import { APP_ROUTING } from "./app.routing";
 //Modulos
 import { ServiceModule } from "./services/service.module";
 import { SharedModule } from './shared/shared.module';
-import { PagesModule } from './pages/pages.module';
 
 //Components
 import { LoginComponent } from "./login/login.component";
