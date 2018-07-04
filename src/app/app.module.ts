@@ -9,15 +9,30 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { APP_ROUTING } from "./app.routing";
 
 //Modulos
-import { PagesModule } from "./pages/pages.module";
-import { LoginModule } from "./login/login.module";
 import { ServiceModule } from "./services/service.module";
+import { SharedModule } from './shared/shared.module';
+import { PagesModule } from './pages/pages.module';
 
-
+//Components
+import { LoginComponent } from "./login/login.component";
+import { RegisterComponent } from "./login/register.component";
+import { PagesComponent } from "./pages/pages.component";
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, APP_ROUTING, PagesModule, LoginModule, FormsModule, ServiceModule],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    PagesComponent
+  ],
+  imports: [
+    BrowserModule,
+    APP_ROUTING,
+    FormsModule,
+    ReactiveFormsModule,
+    ServiceModule,
+    SharedModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

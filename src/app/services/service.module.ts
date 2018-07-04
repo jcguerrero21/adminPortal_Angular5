@@ -13,22 +13,27 @@ import {
   SubirArchivoService,
   HospitalService,
   MedicoService,
-  AdminGuard
+  AdminGuard,
+  VerificaTokenGuard
 } from "./service.index";
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    HttpClientModule
+  ],
   providers: [
     SettingsService,
     SidebarService,
     SharedService,
     UsuarioService,
     LoginGuardGuard,
+    AdminGuard,
     SubirArchivoService,
     ModalUploadService,
     HospitalService,
     MedicoService,
-    AdminGuard
+    VerificaTokenGuard
   ],
   declarations: []
 })
